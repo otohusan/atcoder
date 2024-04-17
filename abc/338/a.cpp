@@ -5,15 +5,17 @@ int main() {
     string S;
     cin >> S;
 
-    set<string> list;
+    if (!isupper(S[0])) {
+        cout << "No";
+        return 0;
+    }
 
-    char a;
-
-    for (int i = 0; i < S.size(); i++) {
-        for (int j = 1; i + j <= S.size(); j++) {
-            list.insert(S.substr(i, j));
+    for (int i = 1; i < S.size(); i++) {
+        if (!islower(S[i])) {
+            cout << "No";
+            return 0;
         }
     }
 
-    cout << list.size();
+    cout << "Yes";
 }
