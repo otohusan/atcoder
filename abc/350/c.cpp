@@ -12,35 +12,31 @@ int main() {
     int ans = 0;
     vector<int> B;
     vector<int> C;
-    map<int, int> M;
+
     map<int, int> Index;
-    set<int> S;
+    for (int i = 0; i < N; i++) {
+        Index[A[i]] = i;
+    }
+
     for (int i = 0; i < N; i++) {
         if (A[i] == i + 1)
             continue;
 
-        if (S.count(A[i])) {
-            Index[M[A[i]]] = i + 1;
-            C.push_back(i + 1);
-            continue;
-        }
-
-        if (M.count(i + 1)) {
-            B.push_back(M[i + 1]);
-            B.push_back(i + 1);
-            continue;
-        }
-
         ans++;
-        B.push_back(i + 1);
-        B.push_back(A[i]);
-        S.insert(i + 1);
-        M[i + 1] = A[i];
+        B.push_back(Index[i + 1] + 1);
+        C.push_back(i + 1);
+
+        int v = 0;
+        v = A[i];
+
+        A[i] = A[Index[i + 1]];
+        A[Index[i + 1]] = v;
+        Index[v] = Index[i + 1];
     }
 
     cout << ans << endl;
 
     for (int i = 0; i < B.size(); i++) {
-        cout << B[i] << " " << C[i] << endl;
+        cout << C[i] << " " << B[i] << endl;
     }
 }
