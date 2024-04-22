@@ -3,8 +3,10 @@ using namespace std;
 using ll = long long int;
 
 int main() {
-    int B, G;
-    cin >> B >> G;
+    int N;
+    cin >> N;
 
-    cout << (B > G ? "Bat" : "Glove");
+    for (int i = 0; i < N; i++) {
+        cout << N;
+    }
 }
