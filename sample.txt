@@ -1,6 +1,8 @@
-5 ababc
-ababc
-babc
-abacbc
-abdbc
-abbac
+7
+-oxoxox
+x-xxxox
+oo-xoox
+xoo-ooo
+ooxx-ox
+xxxxx-x
+oooxoo-
