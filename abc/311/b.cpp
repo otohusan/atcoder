@@ -19,7 +19,6 @@ int main() {
         bool flag = true;
         for (ll j = 0; j < N; j++) {
             if (S[j][i] == 'x') {
-                ans = max(ans, count);
                 count = 0;
                 flag = false;
             }
@@ -27,9 +26,8 @@ int main() {
 
         if (flag)
             count++;
+        ans = max(ans, count);
     }
-
-    ans = max(ans, count);
 
     cout << ans;
 }
