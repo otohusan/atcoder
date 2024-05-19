@@ -5,6 +5,13 @@ using ll = long long int;
 vector<int> dy = {-1, 0, 1, 0};
 vector<int> dx = {0, 1, 0, -1};
 
+bool compare(string s) {
+    string rs = s;
+    reverse(rs.begin(), rs.end());
+
+    return rs == s ? true : false;
+}
+
 int main() {
     ll N;
     cin >> N;
@@ -15,14 +22,7 @@ int main() {
     for (ll i = 0; i < N + 1; i++) {
         for (ll j = i + 1; j < N; j++) {
 
-            string s = S[i] + S[j];
-            string x_s = S[j] + S[i];
-            string r_s = s;
-            string x_r_s = x_s;
-            reverse(r_s.begin(), r_s.end());
-            reverse(x_r_s.begin(), x_r_s.end());
-
-            if (s == r_s || x_s == x_r_s) {
+            if (compare(S[i] + S[j]) || compare(S[j] + S[i])) {
                 cout << "Yes";
                 return 0;
             }
