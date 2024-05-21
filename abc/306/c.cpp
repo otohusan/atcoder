@@ -5,4 +5,19 @@ using ll = long long int;
 vector<int> dy = {-1, 0, 1, 0};
 vector<int> dx = {0, 1, 0, -1};
 
-int main() {}
+int main() {
+    map<ll, ll> M;
+    ll N;
+    cin >> N;
+
+    for (ll i = 0; i < 3 * N; i++) {
+        ll a;
+        cin >> a;
+
+        if (M[a] == 1) {
+            cout << a << " ";
+        }
+
+        M[a]++;
+    }
+}
