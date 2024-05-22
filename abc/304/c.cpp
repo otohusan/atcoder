@@ -36,8 +36,6 @@ int main() {
         S.pop();
 
         for (ll i = 0; i < N; i++) {
-            if (i_i == i)
-                continue;
             if (ans[i] == true)
                 continue;
 
