@@ -1,6 +1,9 @@
-5 5
-ezzze
-zzzkz
-ezuzu
-znznn
-snuze
+8 4
+fast
+face
+cast
+race
+fact
+rice
+nice
+case
