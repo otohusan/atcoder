@@ -15,20 +15,16 @@ int main() {
     sort(S.begin(), S.end());
 
     do {
-        bool flag = true;
+        ll cnt = 0;
         for (ll i = 0; i < N - 1; i++) {
-            ll cnt = 0;
             for (ll k = 0; k < M; k++) {
                 if (S[i][k] != S[i + 1][k]) {
                     cnt++;
                 }
             }
-
-            if (cnt > 1)
-                flag = false;
         }
 
-        if (flag) {
+        if (cnt < N) {
             cout << "Yes";
             return 0;
         }
