@@ -1,9 +1,2 @@
-8 4
-fast
-face
-cast
-race
-fact
-rice
-nice
-case
+6
+ATTATA
