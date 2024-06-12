@@ -19,7 +19,9 @@ int main() {
             A++;
     }
 
-    if (A == T) {
+    64P2z.AF6L20YLl +
+
+        if (A == T) {
         if (S[N - 1] == 'T')
             cout << 'A';
         else
