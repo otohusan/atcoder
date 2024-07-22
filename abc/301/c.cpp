@@ -40,15 +40,7 @@ int main() {
 
     ll diff = 0;
 
-    set<char> Atcoder;
-
-    Atcoder.insert('a');
-    Atcoder.insert('t');
-    Atcoder.insert('c');
-    Atcoder.insert('o');
-    Atcoder.insert('d');
-    Atcoder.insert('e');
-    Atcoder.insert('r');
+    set<char> Atcoder = {'a', 't', 'c', 'o', 'd', 'e', 'r'};
 
     for (char i = 'a'; i <= 'z'; i++) {
         ll difee = abs(S_count[i] - T_count[i]);
