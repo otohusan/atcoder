@@ -5,4 +5,9 @@ using ll = long long int;
 vector<int> dy = {-1, 0, 1, 0};
 vector<int> dx = {0, 1, 0, -1};
 
-int main() {}
+int main() {
+    string S;
+    cin >> S;
+    for (auto &s : S)
+        cout << (char)toupper(s);
+}
