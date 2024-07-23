@@ -1,2 +1,4 @@
-7
-oo-oooo
+3 5
+TTT..
+.TTT.
+TTTTT
