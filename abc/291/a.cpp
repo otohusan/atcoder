@@ -5,4 +5,14 @@ using ll = long long int;
 vector<int> dy = {-1, 0, 1, 0};
 vector<int> dx = {0, 1, 0, -1};
 
-int main() {}
+int main() {
+    string S;
+    cin >> S;
+
+    for (int i = 0; i < S.size(); i++) {
+        if (S[i] == (char)toupper(S[i])) {
+            cout << i + 1;
+            return 0;
+        }
+    }
+}
