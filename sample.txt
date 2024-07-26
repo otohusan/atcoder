@@ -1,2 +1,6 @@
-10 6
-1 2 3 7 8 9
+5 3
+abc
+aaaaa
+xyz
+a
+def
