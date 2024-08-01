@@ -6,8 +6,18 @@ vector<int> dy = {-1, 0, 1, 0};
 vector<int> dx = {0, 1, 0, -1};
 
 int main() {
-    int a, b;
-    cin >> a >> b;
+    int n;
+    cin >> n;
+    stack<string> S;
 
-    cout << (abs(b - (a + a)) <= 1 ? "Yes" : "No");
+    for (int i = 0; i < n; i++) {
+        string s;
+        cin >> s;
+        S.push(s);
+    }
+
+    while (!S.empty()) {
+        cout << S.top() << endl;
+        S.pop();
+    }
 }
