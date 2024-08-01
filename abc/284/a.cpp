@@ -5,4 +5,19 @@ using ll = long long int;
 vector<int> dy = {-1, 0, 1, 0};
 vector<int> dx = {0, 1, 0, -1};
 
-int main() {}
+int main() {
+    int n;
+    cin >> n;
+    stack<string> S;
+
+    for (int i = 0; i < n; i++) {
+        string s;
+        cin >> s;
+        S.push(s);
+    }
+
+    while (!S.empty()) {
+        cout << S.top() << endl;
+        S.pop();
+    }
+}
