@@ -1,39 +1,60 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = unsigned long long int;
+using ll = long long int;
 // U, R, D, L
 vector<int> dy = {-1, 0, 1, 0};
 vector<int> dx = {0, 1, 0, -1};
 
-string shift(string S) {
-    string res = S;
-
-    for (int i = 0; i < S.size(); i++) {
-        res[i] = S[(i + 1) % S.size()];
+int main() {
+    ll N, M;
+    cin >> N >> M;
+    if (M > N - 1) {
+        cout << "No";
+        return 0;
     }
 
-    return res;
-}
+    vector<vector<ll>> G(N);
+    for (ll i = 0; i < M; i++) {
+        ll a, b;
+        cin >> a >> b;
+        a--;
+        b--;
 
-int main() {
-    ll N, A, B;
-    string S;
-    cin >> N >> A >> B >> S;
+        G[a].push_back(b);
+        G[b].push_back(a);
+    }
 
-    ll ans = LLONG_MAX;
+    vector<bool> used(N);
 
-    for (int i = 0; i < N; i++) {
-        ll B_money = 0;
+    queue<ll> Q;
+    Q.push(0);
+    used[0] = true;
 
-        for (int j = 0; j < N / 2; j++) {
-            if (S[j] != S[N - j - 1])
-                B_money += B;
+    while (!Q.empty()) {
+        ll next = Q.front();
+        Q.pop();
+
+        if (G[next].size() > 2) {
+            cout << "No";
+            return 0;
         }
 
-        ans = min(ans, (A * i) + B_money);
+        for (auto n : G[next]) {
 
-        S = shift(S);
+            if (used[n])
+                continue;
+
+            Q.push(n);
+            used[n] = true;
+        }
     }
 
-    cout << ans;
+    for (auto a : used) {
+        if (!a) {
+            cout << "No";
+            return 0;
+        }
+    }
+
+    cout << "Yes";
 }
