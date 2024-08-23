@@ -20,28 +20,16 @@ int main() {
         return 0;
     }
 
-    sort(A.begin(), A.end());
-
-    vector<ll> R(N);
-    R[0] = A[0];
-    for (ll i = 0; i < N - 1; i++) {
-        R[i + 1] = R[i] + A[i + 1];
+    int ok = 0, ng = 1000000000;
+    while (abs(ok - ng) > 1) {
+        ll mid = (ok + ng) >> 1;
+        ll tmp = 0;
+        for (auto v : A)
+            tmp += min(mid, v);
+        if (tmp <= M)
+            ok = mid;
+        else
+            ng = mid;
     }
-
-    ll ans = M / N;
-
-    for (ll i = 0; i < N; i++) {
-        ll sum = R[i] + (R.size() - (i + 1)) * A[i];
-
-        int add = 0;
-
-        if (sum <= M) {
-            if (M % sum >= N - (i + 1))
-                add = (M - sum) / (N - (i + 1));
-
-            ans = max(ans, A[i] + add);
-        }
-    }
-
-    cout << ans;
+    cout << ok << endl;
 }
