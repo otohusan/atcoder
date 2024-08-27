@@ -10,19 +10,12 @@ int main() {
     string s;
     cin >> s;
 
-    string ans = s;
-
-    for (int i = 0; i < s.length(); i++) {
-        if (s[s.length() - 1 - i] == '.') {
-            ans.pop_back();
-            break;
-        }
-        if (s[s.length() - 1 - i] == '0') {
-            ans.pop_back();
-            continue;
-        }
-        break;
+    while (s.back() == '0') {
+        s.pop_back();
     }
 
-    cout << ans;
+    if (s.back() == '.')
+        s.pop_back();
+
+    cout << s;
 }
