@@ -1,3 +1,4 @@
 .vscode/
+!.vscode.sample/
 problem
 sample.txt
