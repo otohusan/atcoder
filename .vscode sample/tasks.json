@@ -4,7 +4,7 @@
     {
       "type": "cppbuild",
       "label": "母",
-      "command": "/usr/local/bin/g++-14",
+      "command": "/usr/local/bin/g++-13",
       "args": [
         "-fdiagnostics-color=always",
         "${file}",

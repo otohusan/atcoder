@@ -1,0 +1,39 @@
+{
+  "configurations": [
+    {
+      "name": "Mac",
+      "includePath": ["${workspaceFolder}/**", "/usr/local/include/**"],
+      "defines": [],
+      "macFrameworkPath": [
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
+      ],
+      "compilerPath": "/usr/local/bin/g++",
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "macos-gcc-x64"
+    }
+  ],
+  "version": 4
+}
+
+// {
+//   "configurations": [
+//     {
+//       "name": "Mac",
+//       "includePath": [
+//         "${workspaceFolder}/**",
+//         "/usr/local/include/**",
+//         "/usr/local/opt/gcc/include/**"
+//       ],
+//       "defines": [],
+//       "macFrameworkPath": [
+//         "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
+//       ],
+//       "compilerPath": "/usr/local/opt/gcc/bin/g++-14",
+//       "cStandard": "c17",
+//       "cppStandard": "c++17",
+//       "intelliSenseMode": "macos-gcc-x64"
+//     }
+//   ],
+//   "version": 4
+// }

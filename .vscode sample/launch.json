@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "name": "これ",
+      "name": "母",
       "type": "cppdbg",
       "request": "launch",
       "program": "${fileDirname}/${fileBasenameNoExtension}",
