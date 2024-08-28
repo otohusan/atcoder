@@ -6,4 +6,9 @@ const ll INF = LLONG_MAX;
 vector<int> dy = {-1, 0, 1, 0};
 vector<int> dx = {0, 1, 0, -1};
 
-int main() {}
+int main() {
+    int N, T, A;
+    cin >> N >> T >> A;
+
+    cout << (N - (T + A) < abs(T - A) ? "Yes" : "No");
+}
