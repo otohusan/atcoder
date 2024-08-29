@@ -1,6 +1,2 @@
-5 3
-abc
-aaaaa
-xyz
-a
-def
+3 2
+2 1 3
