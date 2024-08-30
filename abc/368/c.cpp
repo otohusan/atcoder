@@ -17,20 +17,15 @@ int main() {
 
     for (int i = 0; i < N; i++) {
         ans += (H[i] / 5) * 3;
-        ll amari = H[i] % 5;
-        H[i] = amari;
+        H[i] = H[i] % 5;
 
-        for (int j = 0; j < amari; j++) {
+        while (H[i] > 0) {
             ans++;
 
             if (ans % 3 == 0) {
                 H[i] -= 3;
             } else {
                 H[i] -= 1;
-            }
-
-            if (H[i] <= 0) {
-                break;
             }
         }
     }
