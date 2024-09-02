@@ -6,4 +6,19 @@ const ll INF = LLONG_MAX;
 vector<int> dy = {-1, 0, 1, 0};
 vector<int> dx = {0, 1, 0, -1};
 
-int main() {}
+int main() {
+    string S;
+    cin >> S;
+
+    int ans = 0;
+
+    for (int i = 0; i < S.size(); i++) {
+        if (S[i] == 'v') {
+            ans++;
+        } else {
+            ans += 2;
+        }
+    }
+
+    cout << ans;
+}
