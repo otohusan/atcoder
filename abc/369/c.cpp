@@ -6,6 +6,4 @@ const ll INF = LLONG_MAX;
 vector<int> dy = {-1, 0, 1, 0};
 vector<int> dx = {0, 1, 0, -1};
 
-int main() {
-    // 追加
-}
+int main() {}
