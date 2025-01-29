@@ -1,5 +1,12 @@
-function merge(nums1: number[], m: number, nums2: number[], n: number): void {
-  nums1.splice(m, nums1.length - m, ...nums2);
+function removeElement(nums: number[], val: number): number {
+  let k = 0;
 
-  nums1.sort((a, b) => a - b);
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== val) {
+      nums[k] = nums[i]; // 先頭から詰める
+      k++;
+    }
+  }
+
+  return k;
 }
