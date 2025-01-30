@@ -1,12 +1,17 @@
-function removeElement(nums: number[], val: number): number {
-  let k = 0;
+function removeDuplicates(nums: number[]): number {
+  const set = new Set();
+  let k: number = 0;
 
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== val) {
-      nums[k] = nums[i]; // 先頭から詰める
+  for (let index = 0; index < nums.length; index++) {
+    if (!set.has(nums[index])) {
+      nums[k] = nums[index];
       k++;
     }
+
+    set.add(nums[index]);
   }
+
+  nums.slice(0, k);
 
   return k;
 }
