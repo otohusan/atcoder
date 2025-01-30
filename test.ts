@@ -1,17 +1,9 @@
 function removeDuplicates(nums: number[]): number {
-  const set = new Set();
-  let k: number = 0;
+  const newNums = Array.from(new Set(nums));
 
-  for (let index = 0; index < nums.length; index++) {
-    if (!set.has(nums[index])) {
-      nums[k] = nums[index];
-      k++;
-    }
-
-    set.add(nums[index]);
+  for (let index = 0; index < newNums.length; index++) {
+    nums[index] = newNums[index];
   }
 
-  nums.slice(0, k);
-
-  return k;
+  return newNums.length;
 }
