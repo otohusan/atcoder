@@ -1,13 +1,17 @@
 function removeDuplicates(nums: number[]): number {
-  if (nums.length === 0) return 0;
+  const map = new Map<number, number>();
+  let k = 0;
 
-  let k = 1; // 最終的なユニークな要素の数をカウント
+  for (let index = 0; index < nums.length; index++) {
+    const count = map.get(nums[index]) ?? 0; // 既存のカウントを取得（未登録なら0）
 
-  for (let i = 1; i < nums.length; i++) {
-    if (nums[i] !== nums[i - 1]) {
-      nums[k] = nums[i]; // ユニークな値を前に詰める
+    if (count < 2) {
+      // 2回まで許容
+      nums[k] = nums[index]; // 先頭に詰める
       k++;
     }
+
+    map.set(nums[index], count + 1); // カウントを更新
   }
 
   return k;
