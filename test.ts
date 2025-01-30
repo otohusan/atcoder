@@ -1,9 +1,14 @@
 function removeDuplicates(nums: number[]): number {
-  const newNums = Array.from(new Set(nums));
+  if (nums.length === 0) return 0;
 
-  for (let index = 0; index < newNums.length; index++) {
-    nums[index] = newNums[index];
+  let k = 1; // 最終的なユニークな要素の数をカウント
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] !== nums[i - 1]) {
+      nums[k] = nums[i]; // ユニークな値を前に詰める
+      k++;
+    }
   }
 
-  return newNums.length;
+  return k;
 }
