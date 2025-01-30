@@ -1,14 +1,13 @@
 function majorityElement(nums: number[]): number {
-  const map = new Map<number, number>();
-  const majorityCount = Math.floor(nums.length / 2);
+  let candidate = nums[0];
+  let count = 0;
 
   for (let num of nums) {
-    map.set(num, (map.get(num) ?? 0) + 1);
-
-    if (map.get(num)! > majorityCount) {
-      return num;
+    if (count === 0) {
+      candidate = num;
     }
+    count += num === candidate ? 1 : -1;
   }
 
-  return -1; // ここには到達しない（問題の条件より、必ず存在する）
+  return candidate;
 }
