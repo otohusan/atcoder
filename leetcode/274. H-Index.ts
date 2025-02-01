@@ -1,17 +1,14 @@
 function hIndex(citations: number[]): number {
-  let ans = 0;
+  citations.sort((a, b) => b - a);
 
-  for (let index = 1; index <= 1000; index++) {
-    let count = 0;
-
-    for (let j = 0; j < citations.length; j++) {
-      if (citations[j] >= index) {
-        count++;
-      }
+  let h = 0;
+  for (let i = 0; i < citations.length; i++) {
+    if (citations[i] >= i + 1) {
+      h = i + 1;
+    } else {
+      break;
     }
-
-    if (count >= index) ans = Math.max(index, ans);
   }
 
-  return ans;
+  return h;
 }
