@@ -18,3 +18,5 @@ function canCompleteCircuit(gas: number[], cost: number[]): number {
   // 全体のガス量が不足していれば、一周は不可能
   return totalTank < 0 ? -1 : startStation;
 }
+
+// TODO: 振り返りたい
