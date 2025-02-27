@@ -12,7 +12,6 @@ function romanToInt(s: string): number {
 
   let total = 0;
 
-  // 文字列の先頭から順に処理
   for (let i = 0; i < s.length; i++) {
     const currVal = values[s[i]];
 
