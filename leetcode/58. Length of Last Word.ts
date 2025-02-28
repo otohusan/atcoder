@@ -13,3 +13,8 @@ function lengthOfLastWord(s: string): number {
 
   return ans;
 }
+
+function lengthOfLastWord2(s: string): number {
+  const words = s.trim().split(" ");
+  return words[words.length - 1].length;
+}
