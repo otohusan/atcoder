@@ -1,31 +1,21 @@
 function longestCommonPrefix(strs: string[]): string {
-  let ans: string = "";
+  if (strs.length === 0) return "";
+  if (strs.length === 1) return strs[0];
 
-  if (strs.length === 1) {
-    return strs[0];
-  }
-
+  let prefix = "";
+  // 第一要素の各文字について調べる
   for (let i = 0; i < strs[0].length; i++) {
-    let flag = true;
-    let word = "";
-
+    const char = strs[0][i];
+    // 他の文字列と比較
     for (let j = 1; j < strs.length; j++) {
-      word = strs[j][i];
-      if (strs[j].length < i) {
-        flag = false;
-      }
-
-      if (strs[j - 1][i] !== strs[j][i]) {
-        flag = false;
+      // 文字列の終端に達している、または文字が一致しない場合は終了
+      if (i === strs[j].length || strs[j][i] !== char) {
+        return prefix;
       }
     }
-
-    if (!flag) {
-      break;
-    }
-
-    ans += word;
+    // 全ての文字列で一致していれば、接頭辞に追加
+    prefix += char;
   }
 
-  return ans;
+  return prefix;
 }
